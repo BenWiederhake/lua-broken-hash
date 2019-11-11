@@ -108,6 +108,9 @@ Note that it isn't in mainstream lua 5.2.4 nor 5.3 nor luajit.
 Even "we must be faster than C"-Rust has accepted that string hashing and hashing in general
 needs to be [safe by default](https://github.com/rust-lang/rust/blob/master/src/libstd/collections/hash/map.rs#L2523).
 
+Meanwhile, in lua you could probably write a poem where each line has the same hash.
+(Take this as a challenge!)
+
 Alright, maybe SipHash is overkill for lua.  But at least *looking at the input* should be a
 good start for a hash function that doesn't make the language feel like a minefield where
 inserting your data as keys could make it grind to a halt.

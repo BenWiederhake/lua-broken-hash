@@ -6,7 +6,8 @@ This is a proof of concept that Lua is unusable for
 anything where similar strings might appear in a table.
 
 These strings don't even need to be adversarial!
-Lua uses sparse hashes, and reads only 16-31 bytes.
+Lua uses [sparse](https://github.com/lua/lua/blob/6aeaeb5656a006ad95b35dd7482798fdc5f02f5e/lstring.c#L53)
+[hashes](https://github.com/LuaJIT/LuaJIT/blob/f0e865dd4861520258299d0f2a56491bd9d602e1/src/lj_str.c#L134), and reads only 16-31 bytes.
 And there's basically only two implementations of lua,
 so collisions happen whenever your strings are equal
 in those 16-31 bytes.
